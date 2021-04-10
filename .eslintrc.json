@@ -3,7 +3,9 @@
         "es2021": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -11,8 +13,72 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier",
+        "eslint-plugin-import-helpers"
     ],
     "rules": {
+        "no-new": "off",
+        "max-classes-per-file": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-console": "off",
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/explicit-function-return-type": 1,
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "_"
+            }
+        ],
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "interface",
+                "format": [
+                    "PascalCase"
+                ],
+                "custom": {
+                    "regex": "^I[A-Z]",
+                    "match": true
+                }
+            }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": [
+            "warn",
+            {
+                "allowArgumentsExplicitlyTypedAsAny": true
+            }
+        ],
+        "@typescript-eslint/camelcase": 0,
+        "prettier/prettier": "error",
+        "class-methods-use-this": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never"
+            }
+        ],
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always", // new line between groups
+                "groups": [
+                    "module",
+                    "/^@server\/shared/",
+                    "/^@/",
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "ignoreCase": true
+                }
+            }
+        ]
     }
 }
