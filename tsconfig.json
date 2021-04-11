@@ -14,11 +14,13 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      // "@controllers/*": ["./src/controllers/*"],
-      // "@models/*": ["./src/models/*"],
-      // "@views/*": ["./src/views/*"],
-      // "@routes/*": ["./src/routes/*"],
-      // "@config/*": ["./src/config/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@models/*": ["./src/models/*"],
+      "@views/*": ["./src/views/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@database/*": ["./src/database/*"],
+      "@config/*": ["./src/config/*"],
     }
   }
 }
